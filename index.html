@@ -1,0 +1,157 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>MANAGEMENT SERVICE — DEMAT Account Handling</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">  <!-- Meta / Facebook Pixel Code -->  <script>
+
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+
+      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '123457900'); fbq('track', 'PageView');
+
+  </script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=123457900&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+
+    :root{
+
+      --primary:#00724e;
+
+      --secondary:#05b485;
+
+      --accent:#ffffff;
+
+      --text:#ffffff;
+
+      --muted:#cbd5e1;
+
+      --bg:#121212;
+
+      --title-gradient: linear-gradient(135deg, #facc15, #ec4899);
+
+    }
+
+    *{box-sizing:border-box}
+
+    body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px;overflow-x:hidden;}
+
+    .card{background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.3);width:100%;max-width:440px;padding:28px 24px 34px;position:relative;overflow:hidden;opacity:0;transform: translateY(20px);animation: fadeInUp 1s forwards;}
+
+    @keyframes fadeInUp{to{opacity:1;transform:translateY(0);}}
+
+    .brand{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;margin-bottom:20px;position:relative;z-index:1}
+
+    .logo{width:72px;height:72px;border-radius:18px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:#fff;letter-spacing:1px;box-shadow:0 4px 12px rgba(0,0,0,0.4);margin-bottom:12px}
+
+    .title{font-size:22px;font-weight:800;text-transform:uppercase;background:var(--title-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+
+    .lead{font-size:13px;color:var(--muted);margin-top:6px}
+
+    form{margin-top:20px;display:grid;gap:14px;position:relative;z-index:1}
+
+    label{font-size:13px;color:var(--text);margin-bottom:5px;display:block}
+
+    input, select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #333;font-size:15px;outline:none;transition:all .3s ease;background:#1f1f1f;color:#fff}
+
+    input:focus, select:focus{border-color:var(--secondary);box-shadow:0 0 12px rgba(5,180,133,0.5)}
+
+    .btn-submit{width:100%;padding:15px 0;margin-top:10px;border:none;border-radius:50px;font-weight:600;font-size:17px;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--primary),var(--secondary));box-shadow:0 5px 14px rgba(0,114,78,0.5);transition:all .3s ease}
+
+    .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,114,78,0.7)}
+
+    .btn-submit:active{transform:scale(0.98)}
+
+    .disclaimer{text-align:center;font-size:12px;color:var(--muted);margin-top:12px}
+
+    .footer{text-align:center;font-size:13px;color:var(--muted);margin-top:16px}
+
+    @media (max-width:480px){.card{padding:22px}.logo{width:64px;height:64px}.title{font-size:20px}}
+
+  </style></head>
+
+<body>
+
+  <div class="card">
+
+    <div class="brand">
+
+      <div class="logo">MS</div>
+
+      <div class="title">MANAGEMENT SERVICE</div>
+
+      <div class="lead">Fill your details and connect with us instantly on WhatsApp.</div>
+
+    </div>
+
+    <form id="leadForm">
+
+      <div><label for="name">First Name</label><input id="name" name="name" type="text" placeholder="Enter your first name" required /></div>
+
+      <div><label for="mobile">Mobile Number</label><input id="mobile" name="mobile" type="tel" placeholder="10-digit mobile (e.g. 9876543210)" required /></div>
+
+      <div><label for="broker">Broker Name</label><select id="broker" name="broker" required>
+
+        <option value="">Select Broker</option>
+
+        <option>Zerodha</option><option>Upstox</option><option>Groww</option><option>Angel One</option>
+
+        <option>5paisa</option><option>ICICI Direct</option><option>HDFC Securities</option><option>Kotak Securities</option>
+
+        <option>Motilal Oswal</option><option>Sharekhan</option><option>Axis Direct</option><option>SBI Securities</option>
+
+        <option>Alice Blue</option><option>IIFL Securities</option><option>Paytm Money</option><option>Dhan</option>
+
+        <option>Nuvama Wealth</option><option>Ventura Securities</option><option>Choice Broking</option><option>Geojit</option>
+
+      </select></div>
+
+      <div><label for="capital">Investment / Capital (₹)</label><input id="capital" name="capital" type="number" placeholder="Expected capital to invest (e.g. 50000)" min="0" required /></div>
+
+      <button type="submit" class="btn-submit">Submit Form on WhatsApp 📩</button>
+
+      <p class="disclaimer">By submitting, you agree that we may contact you via WhatsApp. We respect your privacy.</p>
+
+    </form>
+
+    <p class="footer">Android & iPhone friendly — WhatsApp opens automatically after submit.</p>
+
+  </div>  <script>
+
+    const WHATSAPP_NUMBER='916378507932';
+
+    const form=document.getElementById('leadForm');
+
+    form.addEventListener('submit', function(e){
+
+      e.preventDefault();
+
+      const name=document.getElementById('name').value;
+
+      const mobile=document.getElementById('mobile').value;
+
+      const broker=document.getElementById('broker').value;
+
+      const capital=document.getElementById('capital').value;
+
+      const msg=`Name: ${name}%0AMobile: ${mobile}%0ABroker: ${broker}%0ACapital: ₹${capital}`;
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,'_blank');
+
+    });
+
+  </script></body>
+
+</html>
